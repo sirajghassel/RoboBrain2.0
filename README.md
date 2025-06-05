@@ -137,7 +137,7 @@ If you find this project useful, welcome to cite us.
     year={2025}
 }
 
-@article{RoboBrain1.0,
+@article{RoboBrain 1.0,
     title={Robobrain: A unified brain model for robotic manipulation from abstract to concrete},
     author={Ji, Yuheng and Tan, Huajie and Shi, Jiayu and Hao, Xiaoshuai and Zhang, Yuan and Zhang, Hengyuan and Wang, Pengwei and Zhao, Mengdi and Mu, Yao and An, Pengju and others},
     journal={arXiv preprint arXiv:2502.21257},
