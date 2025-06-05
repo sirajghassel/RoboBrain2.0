@@ -23,10 +23,10 @@ We are excited to introduce **RoboBrain 2.0**, the most powerful open-source emb
 </div>
 
 ## 🗞️ News
-- **`2025-06-06`**: 🤗 [RoboBrain 2.0-7B](https://superrobobrain.github.io/) model checkpoint has been released in Huggingface..
+- **`2025-06-06`**: 🤗 [RoboBrain 2.0-7B](https://huggingface.co/BAAI/RoboBrain2.0-7B) model checkpoint has been released in Huggingface..
 - **`2025-06-06`**: 🔥 We're excited to announce the release of our more powerful [RoboBrain 2.0](https://superrobobrain.github.io/).
 - **`2025-04-11`**: 🎉 [RoboBrain 1.0](https://github.com/FlagOpen/RoboBrain/) was selected for CVPR 2025's official [Embodied AI Trends Commentary](https://cvpr.thecvf.com/Conferences/2025/News/AI_Enhanced_Robotics).
-- **`2025-02-27`**: 🌍 Our [RoboBrain 1.0](http://arxiv.org/abs/2502.21257/) was accepted to CVPR2025.
+- **`2025-02-27`**: 🌍 [RoboBrain 1.0](http://arxiv.org/abs/2502.21257/) was accepted to CVPR2025.
 
 
 ## 📆 Todo
