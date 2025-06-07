@@ -23,7 +23,7 @@ We are excited to introduce **RoboBrain 2.0**, the most powerful open-source emb
 </div>
 
 ## 🗞️ News
-- **`2025-06-07`**: 🎉 We highlight the training framework ([FlagScale](https://github.com/FlagOpen/FlagScale)) developed by *Framework R&D team of BAAI*, and the evaluation framework ([FlagEvalMM](https://github.com/flageval-baai/FlagEvalMM)) developed by *FlagEval team of BAAI*. Both are used for RoboBrain 2.0. 
+- **`2025-06-07`**: 🎉 We highlight the training framework ([FlagScale](https://github.com/FlagOpen/FlagScale)) developed by *BAAI Framework R&D team*, and the evaluation framework ([FlagEvalMM](https://github.com/flageval-baai/FlagEvalMM)) by *BAAI FlagEval team*. Both are used for RoboBrain 2.0. 
 - **`2025-06-06`**: 🤗 [RoboBrain 2.0-7B](https://huggingface.co/BAAI/RoboBrain2.0-7B) model checkpoint has been released in Huggingface.
 - **`2025-06-06`**: 🔥 We're excited to announce the release of our more powerful [RoboBrain 2.0](https://superrobobrain.github.io/).
 - **`2025-04-11`**: 🎉 [RoboBrain 1.0](https://github.com/FlagOpen/RoboBrain/) was selected for CVPR 2025's official [Embodied AI Trends Commentary](https://cvpr.thecvf.com/Conferences/2025/News/AI_Enhanced_Robotics).
@@ -142,7 +142,7 @@ python run.py --config-path ./examples/qwen2_5_vl/conf --config-name train actio
 <img src="./assets/logo_flageval.png" width="300"/>
 </div>
 
-We adopted the flexible evaluation framework [FlagEvalMM](https://github.com/flageval-baai/FlagEvalMM) developed by the ***FlagEval team of BAAI*** for Comprehensive Multimodal Model Evaluation. The evaluation can be launched in the following steps:
+We adopted the flexible evaluation framework [FlagEvalMM](https://github.com/flageval-baai/FlagEvalMM) developed by the ***FlagEval team of BAAI*** for comprehensive multimodal model evaluation. The evaluation can be launched in the following steps:
 
 **Step 1:**
 Refer to the instructions at [FlagEvalMM](https://github.com/flageval-baai/FlagEvalMM) for installation, configuration, and data preparation.
