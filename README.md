@@ -1,4 +1,4 @@
-![资源 7](https://github.com/user-attachments/assets/cb8f9038-db2b-4cc2-88e6-b8b14b26a32b)<div align="center">
+<div align="center">
 <img src="./assets/logo2.png" width="500"/>
 </div>
 
@@ -23,7 +23,8 @@ We are excited to introduce **RoboBrain 2.0**, the most powerful open-source emb
 </div>
 
 ## 🗞️ News
-- **`2025-06-06`**: 🤗 [RoboBrain 2.0-7B](https://huggingface.co/BAAI/RoboBrain2.0-7B) model checkpoint has been released in Huggingface..
+- **`2025-06-07`**: 🎉 We highlight the training codes ([FlagScale](https://github.com/FlagOpen/FlagScale)) and evaluation codes ([FlagEvalMM](https://github.com/flageval-baai/FlagEvalMM)) used for RoboBrain 2.0.
+- **`2025-06-06`**: 🤗 [RoboBrain 2.0-7B](https://huggingface.co/BAAI/RoboBrain2.0-7B) model checkpoint has been released in Huggingface.
 - **`2025-06-06`**: 🔥 We're excited to announce the release of our more powerful [RoboBrain 2.0](https://superrobobrain.github.io/).
 - **`2025-04-11`**: 🎉 [RoboBrain 1.0](https://github.com/FlagOpen/RoboBrain/) was selected for CVPR 2025's official [Embodied AI Trends Commentary](https://cvpr.thecvf.com/Conferences/2025/News/AI_Enhanced_Robotics).
 - **`2025-02-27`**: 🌍 [RoboBrain 1.0](http://arxiv.org/abs/2502.21257/) was accepted to CVPR2025.
@@ -32,7 +33,7 @@ We are excited to introduce **RoboBrain 2.0**, the most powerful open-source emb
 ## 📆 Todo
 - [x] Release model checkpoint for RoboBrain 2.0-7B
 - [x] Release quick inference example for RoboBrain 2.0
-- [ ] Release training codes for RoboBrain 2.0
+- [x] Release training and evaluation codes for RoboBrain 2.0
 - [ ] Release model checkpoint for RoboBrain 2.0-32B
 
 ## 🚀 Features
@@ -74,7 +75,7 @@ pip install -r requirements.txt
 ```
 
 
-## 🤖 Simple Inference
+## 💡 Simple Inference
 
 ### 1. Predict without thinking
 ```python
@@ -118,11 +119,37 @@ Prediction: (as an example)
 """
 ```
 
-## Trainning
-We used the distributed training framework **FlagScale** developed by the AI Framework Research Group of the BAAI for training. Refer to https://github.com/FlagOpen/FlagScale.
-![image](https://github.com/user-attachments/assets/8392effc-d4c3-41d2-ab1c-4b8f4d289d98)
+## 🤖 Training
 
+We adopted the distributed training framework [**FlagScale**](https://github.com/FlagOpen/FlagScale) developed by the ***AI Framework R&D team of BAAI*** for training. The training can be launched in the following steps:
 
+### STEP 1:
+Refer to the instructions at [**FlagScale Github**](https://github.com/FlagOpen/FlagScale) for installation, configuration, and data preparation.
+
+### STEP 2:
+Execute the training command (as an example):
+```bash
+python run.py --config-path ./examples/qwen2_5_vl/conf --config-name train action=run
+```
+
+## 🔍 Evaluation
+
+We adopted the flexible evaluation framework [**FlagEvalMM**](https://github.com/flageval-baai/FlagEvalMM) for Comprehensive Multimodal Model Evaluation.
+
+### STEP 1:
+Refer to the instructions at [**FlagEvalMM**](https://github.com/flageval-baai/FlagEvalMM) for installation, configuration, and data preparation.
+
+### STEP 2:
+Execute the evaluation command (as an example):
+```bash
+flagevalmm --tasks tasks/where2place/where2place.py \
+        --exec model_zoo/vlm/api_model/model_adapter.py \
+        --model BAAI/RoboBrain2.0-7B \
+        --num-workers 8 \
+        --output-dir ./results/RoboBrain2.0-7B \
+        --backend vllm \
+        --extra-args "--limit-mm-per-prompt image=18 --tensor-parallel-size 4 --max-model-len 32768 --trust-remote-code --mm-processor-kwargs '{\"max_dynamic_patch\":4}'"
+```
 
 ## 😊 More Results
 
