@@ -23,7 +23,7 @@ We are excited to introduce **RoboBrain 2.0**, the most powerful open-source emb
 </div>
 
 ## 🗞️ News
-- **`2025-06-07`**: 🎉 We highlight the training framework ([FlagScale](https://github.com/FlagOpen/FlagScale)) developed by the *AI Framework R&D team of BAAI*, and the evaluation framework ([FlagEvalMM](https://github.com/flageval-baai/FlagEvalMM)) developed by *FlagEval team of BAAI*, both of which are used for RoboBrain 2.0. 
+- **`2025-06-07`**: 🎉 We highlight the training framework ([FlagScale](https://github.com/FlagOpen/FlagScale)) developed by *Framework R&D team of BAAI*, and the evaluation framework ([FlagEvalMM](https://github.com/flageval-baai/FlagEvalMM)) developed by *FlagEval team of BAAI*. Both are used for RoboBrain 2.0. 
 - **`2025-06-06`**: 🤗 [RoboBrain 2.0-7B](https://huggingface.co/BAAI/RoboBrain2.0-7B) model checkpoint has been released in Huggingface.
 - **`2025-06-06`**: 🔥 We're excited to announce the release of our more powerful [RoboBrain 2.0](https://superrobobrain.github.io/).
 - **`2025-04-11`**: 🎉 [RoboBrain 1.0](https://github.com/FlagOpen/RoboBrain/) was selected for CVPR 2025's official [Embodied AI Trends Commentary](https://cvpr.thecvf.com/Conferences/2025/News/AI_Enhanced_Robotics).
@@ -125,12 +125,12 @@ Prediction: (as an example)
 <img src="./assets/logo_flagscale.png" width="250"/>
 </div>
 
-We adopted the distributed training framework [**FlagScale**](https://github.com/FlagOpen/FlagScale) developed by the ***AI Framework R&D team of BAAI*** for training. The training can be launched in the following steps:
+We adopted the distributed training framework [FlagScale](https://github.com/FlagOpen/FlagScale) developed by the ***Framework R&D team of BAAI*** for training. The training can be launched in the following steps:
 
-**STEP 1:**
-Refer to the instructions at [**FlagScale Github**](https://github.com/FlagOpen/FlagScale) for installation, configuration, and data preparation.
+**Step 1:**
+Refer to the instructions at [FlagScale](https://github.com/FlagOpen/FlagScale) for installation, configuration, and data preparation.
 
-**STEP 2:**
+**Step 2:**
 Execute the training command (as an example):
 ```bash
 python run.py --config-path ./examples/qwen2_5_vl/conf --config-name train action=run
@@ -142,12 +142,12 @@ python run.py --config-path ./examples/qwen2_5_vl/conf --config-name train actio
 <img src="./assets/logo_flageval.png" width="300"/>
 </div>
 
-We adopted the flexible evaluation framework [**FlagEvalMM**](https://github.com/flageval-baai/FlagEvalMM) for Comprehensive Multimodal Model Evaluation.
+We adopted the flexible evaluation framework [FlagEvalMM](https://github.com/flageval-baai/FlagEvalMM) developed by the ***FlagEval team of BAAI*** for Comprehensive Multimodal Model Evaluation. The evaluation can be launched in the following steps:
 
-**STEP 1:**
-Refer to the instructions at [**FlagEvalMM**](https://github.com/flageval-baai/FlagEvalMM) for installation, configuration, and data preparation.
+**Step 1:**
+Refer to the instructions at [FlagEvalMM](https://github.com/flageval-baai/FlagEvalMM) for installation, configuration, and data preparation.
 
-**STEP 2:**
+**Step 2:**
 Execute the evaluation command (as an example):
 ```bash
 flagevalmm --tasks tasks/where2place/where2place.py \
@@ -187,7 +187,7 @@ If you find this project useful, welcome to cite us.
 
 @article{RoboOS,
     title={RoboOS: A Hierarchical Embodied Framework for Cross-Embodiment and Multi-Agent Collaboration},
-    author={Tan, Huajie and Hao, Xiaoshuai and Lin, Minglan and Wang, Pengwei and Lyu, Yaoxu and Cao, Mingyu and Wang, Zhongyuan and Zhang, Shanghang},
+    author={Tan, Huajie and Hao, Xiaoshuai and Chi, Cheng and Lin, Minglan and Lyu, Yaoxu and Cao, Mingyu and Liang, Dong and Chen, Zhuo and Lyu, Mengsi and Peng, Cheng and He, Chenrui and Ao, Yulong and Lin, Yonghua and Wang, Pengwei and Wang, Zhongyuan and Zhang, Shanghang},
     journal={arXiv preprint arXiv:2505.03673},
     year={2025}
 }
