@@ -1,4 +1,4 @@
-<div align="center">
+![资源 7](https://github.com/user-attachments/assets/cb8f9038-db2b-4cc2-88e6-b8b14b26a32b)<div align="center">
 <img src="./assets/logo2.png" width="500"/>
 </div>
 
@@ -117,6 +117,12 @@ Prediction: (as an example)
 }
 """
 ```
+
+## Trainning
+We used the distributed training framework **FlagScale** developed by the AI Framework Research Group of the BAAI for training. Refer to https://github.com/FlagOpen/FlagScale.
+![image](https://github.com/user-attachments/assets/8392effc-d4c3-41d2-ab1c-4b8f4d289d98)
+
+
 
 ## 😊 More Results
 
