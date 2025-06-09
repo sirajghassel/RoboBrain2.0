@@ -124,9 +124,7 @@ Prediction: (as an example)
 ```python
 from inference import SimpleInference
 
-model_id = "BAAI/RoboBrain"
-lora_id = "BAAI/RoboBrain-LoRA-Affordance"
-model = SimpleInference(model_id, lora_id)
+model = SimpleInference("BAAI/RoboBrain2.0-7B")
 
 # Example 1:
 prompt = "You are a robot using the joint control. The task is \"pick_up the suitcase\". Please predict a possible affordance area of the end effector?"
@@ -153,9 +151,7 @@ print(f"Prediction: {pred}")
 ```python
 from inference import SimpleInference
 
-model_id = "BAAI/RoboBrain"
-lora_id = "BAAI/RoboBrain-LoRA-Trajectory"
-model = SimpleInference(model_id, lora_id)
+model = SimpleInference("BAAI/RoboBrain2.0-7B")
 
 # Example 1:
 prompt = "You are a robot using the joint control. The task is \"pick up the knife\". Please predict up to 10 key trajectory points to complete the task. Your answer should be formatted as a list of tuples, i.e. [[x1, y1], [x2, y2], ...], where each tuple contains the x and y coordinates of a point."
@@ -180,9 +176,7 @@ print(f"Prediction: {pred}")
 ```python
 from inference import SimpleInference
 
-model_id = "BAAI/RoboBrain"
-lora_id = "BAAI/RoboBrain-LoRA-Trajectory"
-model = SimpleInference(model_id, lora_id)
+model = SimpleInference("BAAI/RoboBrain2.0-7B")
 
 prompt = "Locate several points within the vacant space in the plastic bowl. Your answer should be formatted as a list of tuples, i.e. [(x1, y1), (x2, y2), ...], where each tuple contains the x and y coordinates of a point satisfying the conditions above. The coordinates should indicate the normalized pixel locations of the points in the image."
 
