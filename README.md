@@ -196,14 +196,7 @@ print(f"Prediction: {pred}")
 
 We adopted the distributed training framework [FlagScale](https://github.com/FlagOpen/FlagScale) developed by the ***Framework R&D team of BAAI*** for training. The training can be launched in the following steps:
 
-**Step 1:**
-Refer to the instructions at [FlagScale](https://github.com/FlagOpen/FlagScale) for installation, configuration, and data preparation.
-
-**Step 2:**
-Execute the training command (as an example):
-```bash
-python run.py --config-path ./examples/qwen2_5_vl/conf --config-name train action=run
-```
+You can reference the [QuickStart.md](https://github.com/FlagOpen/FlagScale/blob/dc6e8248eafe6f03e66e2735400378e5db1f67dd/flagscale/train/models/qwen2_5_vl/QuickStart.md) to train the base instruct model or finetune the RoboBrain2.0.
 
 ## 🔍 Evaluation
 
