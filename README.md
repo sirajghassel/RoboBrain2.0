@@ -127,21 +127,21 @@ from inference import SimpleInference
 model = SimpleInference("BAAI/RoboBrain2.0-7B")
 
 # Example 1:
-prompt = "You are a robot using the joint control. The task is \"pick_up the suitcase\". Please predict a possible affordance area of the end effector?"
+prompt = "You are a robot using the joint control. The task is \"pick_up the suitcase\". Please predict a possible affordance area of the end effector with bounding box [x1, y1, x2, y2]?"
 
 image = "./assets/demo/affordance_1.jpg"
 
-pred = model.inference(prompt, image, do_sample=False)
-print(f"Prediction: {pred}")
+pred = model.inference(prompt, image, enable_thinking=True, do_sample=True)
+print(f"Prediction:\n{pred}")
 
 
 # Example 2:
-prompt = "You are a robot using the joint control. The task is \"push the bicycle\". Please predict a possible affordance area of the end effector?"
+prompt = "You are a robot using the joint control. The task is \"push the bicycle\". Please predict a possible affordance area of the end effector with bounding box [x1, y1, x2, y2]?"
 
 image = "./assets/demo/affordance_2.jpg"
 
-pred = model.inference(prompt, image, do_sample=False)
-print(f"Prediction: {pred}")
+pred = model.inference(prompt, image, enable_thinking=True, do_sample=True)
+print(f"Prediction:\n{pred}")
 
 
 ```
@@ -158,8 +158,8 @@ prompt = "You are a robot using the joint control. The task is \"pick up the kni
 
 image = "./assets/demo/trajectory_1.png"
 
-pred = model.inference(prompt, image, do_sample=False)
-print(f"Prediction: {pred}")
+pred = model.inference(prompt, image, enable_thinking=True, do_sample=True)
+print(f"Prediction:\n{pred}")
 
 
 # Example 2:
@@ -167,8 +167,8 @@ prompt = "You are a robot using the joint control. The task is \"reach for the b
 
 image = "./assets/demo/trajectory_2.png"
 
-pred = model.inference(prompt, image, do_sample=False)
-print(f"Prediction: {pred}")
+pred = model.inference(prompt, image, enable_thinking=True, do_sample=True)
+print(f"Prediction:\n{pred}")
 
 ```
 
@@ -182,8 +182,8 @@ prompt = "Locate several points within the vacant space in the plastic bowl. You
 
 image = "./assets/demo/pointing_1.png"
 
-pred = model.inference(prompt, image, do_sample=False)
-print(f"Prediction: {pred}")
+pred = model.inference(prompt, image, enable_thinking=True, do_sample=True)
+print(f"Prediction:\n{pred}")
 
 ```
 
