@@ -136,9 +136,6 @@ image = "./assets/demo/affordance_1.jpg"
 pred = model.inference(prompt, image, do_sample=False)
 print(f"Prediction: {pred}")
 
-'''
-    Prediction: [0.733, 0.158, 0.845, 0.263]
-'''
 
 # Example 2:
 prompt = "You are a robot using the joint control. The task is \"push the bicycle\". Please predict a possible affordance area of the end effector?"
