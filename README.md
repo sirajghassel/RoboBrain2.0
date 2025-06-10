@@ -126,23 +126,13 @@ from inference import SimpleInference
 
 model = SimpleInference("BAAI/RoboBrain2.0-7B")
 
-# Example 1:
-prompt = "You are a robot using the joint control. The task is \"pick_up the suitcase\". Please predict a possible affordance area of the end effector with bounding box [x1, y1, x2, y2]?"
+# Example:
+prompt = "You are a robot using the joint control. The task is \"hold the cup\". Please predict a possible affordance area of the end effector with bounding box [x1, y1, x2, y2]?"
 
-image = "./assets/demo/affordance_1.jpg"
-
-pred = model.inference(prompt, image, enable_thinking=True, do_sample=True)
-print(f"Prediction:\n{pred}")
-
-
-# Example 2:
-prompt = "You are a robot using the joint control. The task is \"push the bicycle\". Please predict a possible affordance area of the end effector with bounding box [x1, y1, x2, y2]?"
-
-image = "./assets/demo/affordance_2.jpg"
+image = "./assets/demo/affordance.jpg"
 
 pred = model.inference(prompt, image, enable_thinking=True, do_sample=True)
 print(f"Prediction:\n{pred}")
-
 
 ```
 
@@ -154,18 +144,9 @@ from inference import SimpleInference
 model = SimpleInference("BAAI/RoboBrain2.0-7B")
 
 # Example 1:
-prompt = "You are a robot using the joint control. The task is \"pick up the knife\". Please predict up to 10 key trajectory points to complete the task. Your answer should be formatted as a list of tuples, i.e. [[x1, y1], [x2, y2], ...], where each tuple contains the x and y coordinates of a point."
+prompt = "You are a robot using the joint control. The task is \"reach for the banana on the plate\". Please predict up to 10 key trajectory points to complete the task. Your answer should be formatted as a list of tuples, i.e. [[x1, y1], [x2, y2], ...], where each tuple contains the x and y coordinates of a point"
 
-image = "./assets/demo/trajectory_1.png"
-
-pred = model.inference(prompt, image, enable_thinking=True, do_sample=True)
-print(f"Prediction:\n{pred}")
-
-
-# Example 2:
-prompt = "You are a robot using the joint control. The task is \"reach for the banana\". Please predict up to 10 key trajectory points to complete the task. Your answer should be formatted as a list of tuples, i.e. [[x1, y1], [x2, y2], ...], where each tuple contains the x and y coordinates of a point."
-
-image = "./assets/demo/trajectory_2.png"
+image = "./assets/demo/trajectory.jpg"
 
 pred = model.inference(prompt, image, enable_thinking=True, do_sample=True)
 print(f"Prediction:\n{pred}")
@@ -178,9 +159,9 @@ from inference import SimpleInference
 
 model = SimpleInference("BAAI/RoboBrain2.0-7B")
 
-prompt = "Locate several points within the vacant space in the plastic bowl. Your answer should be formatted as a list of tuples, i.e. [(x1, y1), (x2, y2), ...], where each tuple contains the x and y coordinates of a point satisfying the conditions above. The coordinates should indicate the normalized pixel locations of the points in the image."
+prompt = "Identify several spots within the vacant space that's between the two mugs. Your answer should be formatted as a list of tuples, i.e. [(x1, y1), (x2, y2), ...], where each tuple contains the x and y coordinates of a point satisfying the conditions above. The coordinates should indicate the normalized pixel locations of the points in the image."
 
-image = "./assets/demo/pointing_1.png"
+image = "./assets/demo/pointing.jpg"
 
 pred = model.inference(prompt, image, enable_thinking=True, do_sample=True)
 print(f"Prediction:\n{pred}")
