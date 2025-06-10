@@ -143,6 +143,10 @@ Prediction: (as an example)
 """
 ```
 
+<div align="center">
+<img src="./assets/demo_aff.jpg" />
+</div>
+
 
 ### 4. Usage for Trajectory Prediction
 ```python
@@ -167,6 +171,10 @@ Prediction: (as an example)
 """
 ```
 
+<div align="center">
+<img src="./assets/demo_traj.jpg" />
+</div>
+
 ### 5. Usage for Pointing Prediction
 ```python
 from inference import SimpleInference
@@ -190,6 +198,9 @@ Prediction: (as an example)
 """
 ```
 
+<div align="center">
+<img src="./assets/demo_pt.jpg" />
+</div>
 
 ## 🤖 Training
 
@@ -236,14 +247,14 @@ flagevalmm --tasks tasks/where2place/where2place.py \
 ## 📑 Citation
 If you find this project useful, welcome to cite us.
 ```bib
-@article{RoboBrain 2.0 Technical Report,
+@article{RoboBrain2.0TechnicalReport,
     title={RoboBrain 2.0 Technical Report},
     author={BAAI RoboBrain Team},
     journal={arXiv preprint arXiv:TODO},
     year={2025}
 }
 
-@article{RoboBrain 1.0,
+@article{RoboBrain1.0,
     title={Robobrain: A unified brain model for robotic manipulation from abstract to concrete},
     author={Ji, Yuheng and Tan, Huajie and Shi, Jiayu and Hao, Xiaoshuai and Zhang, Yuan and Zhang, Hengyuan and Wang, Pengwei and Zhao, Mengdi and Mu, Yao and An, Pengju and others},
     journal={arXiv preprint arXiv:2502.21257},
@@ -257,9 +268,9 @@ If you find this project useful, welcome to cite us.
     year={2025}
 }
 
-@article{RoboRefer,
+@article{zhou2025roborefer,
     title={RoboRefer: Towards Spatial Referring with Reasoning in Vision-Language Models for Robotics},
-    author={Zhou, Enshen and An, Jingkun and Chi, Cheng and Han, Yi and Rong, Shanyu and Zhang, Chi and Wang, Pengwei and Wang, Zhongyuan and Huang, Tiejun and Sheng, Lu and Zhang, Shanghang},
+    author={Zhou, Enshen and An, Jingkun and Chi, Cheng and Han, Yi and Rong, Shanyu and Zhang, Chi and Wang, Pengwei and Wang, Zhongyuan and Huang, Tiejun and Sheng, Lu and others},
     journal={arXiv preprint arXiv:2506.04308},
     year={2025}
 }
