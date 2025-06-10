@@ -193,13 +193,58 @@ print(f"Prediction:\n{pred}")
 Prediction: (as an example)
 {
     'thinking': 'From the visual input, there is a clear division between two mugs with distinct colors: one blue and one green. The blue mug is positioned towards the left side, while the green mug is on the right side of the scene. The task requires identifying spots between these two mugs.\n\nMy visual processing allows me to focus on the area between the blue mug and the green mug. This region appears to be moderately uniform in texture relative to the surrounding surfaces. I see no significant objects or textures interfering directly between them, suggesting an open space suitable for placing points.\n\nTo fulfill the requirement of identifying multiple spots within this vacant region, I will select distinct pixel coordinates that lie between the mugs, ensuring they are not centered on the mugs themselves or any visible obstructions. My approach involves choosing several points distributed across this gap, maintaining a reasonable spread to reflect "several" distinct locations.\n\nVerification ensures each selected point lies strictly within the visible vacant space between the two cups, away from the edges or any mugs\' contours. Distinctness among points is confirmed to ensure no overlap occurs.\n\nThus, based on direct visual analysis and task requirements, identified points within the vacant area between the two mugs include (376, 309), (332, 357), (384, 335), (343, 296), (348, 327), (328, 346), (371, 322), (392, 303), (380, 324), and (337, 295). These points satisfy all conditions specified by the task.',
-    'answer': '[(376, 309), (332, 357), (384, 335), (343, 296), (348, 327), (328, 346), (371, 322), (392, 303), (380, 324), (337, 295)]'}
+    'answer': '[(376, 309), (332, 357), (384, 335), (343, 296), (348, 327), (328, 346), (371, 322), (392, 303), (380, 324), (337, 295)]'
 }
 """
 ```
 
 <div align="center">
 <img src="./assets/demo_pt.jpg" />
+</div>
+
+### 6. Extra Usage for Navigation Tasks
+```python
+from inference import SimpleInference
+
+model = SimpleInference("BAAI/RoboBrain2.0-7B")
+
+# Example 1:
+prompt_1 = "Identify several spots within toilet in the house"
+
+image = "./assets/demo/navigation.jpg"
+
+pred = model.inference(prompt_1, image, task="pointing", plot=True, enable_thinking=True, do_sample=True)
+print(f"Prediction:\n{pred}")
+
+# Example 2:
+prompt_2 = "Identify several spots within the sofa that can be used for sitting"
+
+image = "./assets/demo/navigation.jpg"
+
+pred = model.inference(prompt_2, image, task="pointing", plot=True, enable_thinking=True, do_sample=True)
+print(f"Prediction:\n{pred}")
+
+"""
+Prediction: (as an example 1: toilet)
+{
+    'thinking': 'From the visual input, I discern the presence of a toilet located centrally on the tiled floor within the frame. Its rectangular form is evident against the darker-toned tiles adjacent to lighter-colored ones, providing visual contrast. I focus on identifying points that accurately represent distinct locations on the toilet\'s surface to satisfy the task requirement.\n\nMy advanced visual processing allows me to segment this toilet from its surrounding elements effectively. Points must be selected such that they do not overlap with other objects or textures interfering with recognizing the toilet specifically. The smooth surface and consistent texture of the toilet allow for precise point identification across its visible areas.\n\nThe task explicitly requires identifying several spots within the toilet. I proceed by carefully selecting multiple distinct coordinates distributed across the toilet’s surface, ensuring they reflect varied positions. These spots are verified to lie strictly within the boundaries of the toilet itself while maintaining their distinctness and avoiding redundancy.\n\nFollowing my visual analysis, I determine the points (318, 445), (293, 466), (307, 478), (277, 459), (320, 456), and (304, 450) as valid choices. These coordinates are well-distributed over the toilet’s surface, ensuring adherence to the task requirements to locate "several" spots.', 
+    'answer': '[(318, 445), (293, 466), (307, 478), (277, 459), (320, 456), (304, 450)]'
+}
+
+Prediction: (as an example 2: sofa)
+{
+    'thinking': "From the visual input, my attention is drawn to a sofa situated against a wooden wall with a distinct texture apparent through its surface pattern. The sofa is composed of cushions and has an apparent soft, inviting structure suitable for sitting. The task requires identifying specific spots on this sofa that can be used comfortably.\n\nThe sofa lies horizontally across the bottom section of the image, extending along the floor's edge. The cushions appear to be evenly spaced, providing consistent seating options. The primary focus area involves pinpointing these regions for potential sitting spots—ensuring they lie within the visible seating area without touching the edges or overlapping any other objects or features.\n\nAs I systematically examine this region, I focus on the cushioned parts of the sofa where there are no structural interruptions or obstructions. These smooth areas provide optimal surfaces for sitting. By assessing the sofa visually, I can select points that are spaced adequately apart, ensuring comfort and utility.\n\nUpon verification, I confirm that these chosen coordinates represent well-distributed points over the entire seating area of the sofa, avoiding any overlaps or intrusions into non-cushioned sections. Each point thus falls distinctly within the intended zone for sitting.\n\nConsequently, based on this direct visual analysis, I identify the following points: (369, 1197), (385, 1190), (359, 1176), and (387, 1172). These coordinates are within the defined couch area, ensuring they comply with the task requirements effectively.", 
+    'answer': '[(369, 1197), (385, 1190), (359, 1176), (387, 1172)]'
+}
+"""
+```
+
+<div align="center">
+<img src="./assets/demo_nv_1.jpg"/>
+</div>
+
+<div align="center">
+<img src="./assets/demo_nv_2.jpg"/>
 </div>
 
 ## 🤖 Training
