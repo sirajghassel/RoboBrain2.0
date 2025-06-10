@@ -46,10 +46,12 @@ class SimpleInference:
             text = f"{text}. Your answer should be formatted as a list of tuples, i.e. [(x1, y1), (x2, y2), ...], where each tuple contains the x and y coordinates of a point satisfying the conditions above. The coordinates should indicate the normalized pixel locations of the points in the image."
         elif task == "affordance":
             print("Affordance task detected. We automatically add an affordance prompt for inference.")
-            text = f"You are a robot using the joint control. The task is {task}. Please predict a possible affordance area of the end effector with bounding box [x1, y1, x2, y2]."
+            text = f"You are a robot using the joint control. The task is \"{text}\". Please predict a possible affordance area of the end effector."
         elif task == "trajectory":
             print("Trajectory task detected. We automatically add a trajectory prompt for inference.")
-            text = f"You are a robot using the joint control. The task is {task}. Please predict up to 10 key trajectory points to complete the task. Your answer should be formatted as a list of tuples, i.e. [[x1, y1], [x2, y2], ...], where each tuple contains the x and y coordinates of a point."
+            text = f"You are a robot using the joint control. The task is \"{text}\". Please predict up to 10 key trajectory points to complete the task. Your answer should be formatted as a list of tuples, i.e. [[x1, y1], [x2, y2], ...], where each tuple contains the x and y coordinates of a point."
+
+        print(F"##### INPUT #####\n{text}\n###############")
 
         messages = [
             {

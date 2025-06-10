@@ -127,13 +127,20 @@ from inference import SimpleInference
 model = SimpleInference("BAAI/RoboBrain2.0-7B")
 
 # Example:
-prompt = "\"hold the cup\""
+prompt = "hold the cup"
 
 image = "./assets/demo/affordance.jpg"
 
 pred = model.inference(prompt, image, task="affordance", plot=True, enable_thinking=True, do_sample=True)
 print(f"Prediction:\n{pred}")
 
+"""
+Prediction: (as an example)
+{
+    'thinking': "From the visual input, the object is recognized as a white ceramic cup with a handle on its side. It appears cylindrical with an open top and has sufficient height for a standard drinking cup. The handle is positioned to one side, which is crucial for grasping. The cup rests on a wooden surface, suggesting stability due to its weight and material solidity.\n\nMy end-effector is equipped with a gripper capable of securely engaging objects of this size and shape, specifically designed for cylindrical and handle-like surfaces. Given my capabilities, I can adjust the grip to accommodate the handle's size and curve. The gripper can easily access the handle area without disturbing the cup's balance on the flat surface.\n\nThe current task is to hold the cup, which necessitates securely gripping it by the handle or potentially enveloping the body if necessary. The cup’s position on the table, within reach, allows me to approach from the left side toward the handle, ensuring optimal leverage for lifting. \n\nVerifying the handle's suitability, it seems sufficiently robust and unobstructed to enable a reliable grip. My sensors will ensure that the force applied through the gripper doesn't exceed the cup's weight and stability limits.\n\nTherefore, the cup's affordance area is [577, 224, 638, 310]. This is because the handle provides a clear and accessible spot for my gripper to engage securely, fulfilling the task requirement to hold the cup effectively.", 
+    'answer': '[577, 224, 638, 310]'
+}
+"""
 ```
 
 
@@ -144,13 +151,20 @@ from inference import SimpleInference
 model = SimpleInference("BAAI/RoboBrain2.0-7B")
 
 # Example:
-prompt = "\"reach for the banana on the plate\""
+prompt = "reach for the banana on the plate"
 
 image = "./assets/demo/trajectory.jpg"
 
 pred = model.inference(prompt, image, task="trajectory", plot=True, enable_thinking=True, do_sample=True)
 print(f"Prediction:\n{pred}")
 
+"""
+Prediction: (as an example)
+{
+    'thinking': 'From the visual input, the target object, a banana, is placed upon a circular plate towards the center-right of the table. My end-effector is positioned near the left edge of the table, ready to initiate movement. A spatial analysis of the scene reveals potential obstructions such as various dishes and objects around the plate. The plate itself defines the immediate vicinity of the target.\n\nMy joint control system enables me to generate smooth trajectories for my end-effector. I will plan a sequence starting from my current position, moving across the table until it reaches the banana, while ensuring clearance from obstacles. The trajectory must be efficient in reaching the target without unnecessary detours or collisions.\n\nThe task is to "reach for the banana on the plate", necessitating a path that begins at my current location and terminates at or very near the banana. Up to 10 key points can be utilized, but fewer may suffice if the path is straightforward.\n\nI verify the proposed path by mentally simulating the trajectory. Considering the table layout, the path needs to navigate away from the nearest glass and avoid the bottle on the right-hand side. Each segment of the trajectory should present sufficient clearance from these objects. The final point must precisely align with the banana\'s location on the plate.\n\nTherefore, based on direct vision analysis, motion planning capabilities, and task requirements, the trajectory points to reach the banana are determined as follows: [(137, 116), (169, 94), (208, 84), (228, 80)]. This sequence forms a viable path from the current end-effector position to the target, respecting the visual environment.', 
+    'answer': '[(137, 116), (169, 94), (208, 84), (228, 80)]'
+}
+"""
 ```
 
 ### 5. Usage for Pointing Prediction
@@ -167,6 +181,13 @@ image = "./assets/demo/pointing.jpg"
 pred = model.inference(prompt, image, task="pointing", plot=True, enable_thinking=True, do_sample=True)
 print(f"Prediction:\n{pred}")
 
+"""
+Prediction: (as an example)
+{
+    'thinking': 'From the visual input, there is a clear division between two mugs with distinct colors: one blue and one green. The blue mug is positioned towards the left side, while the green mug is on the right side of the scene. The task requires identifying spots between these two mugs.\n\nMy visual processing allows me to focus on the area between the blue mug and the green mug. This region appears to be moderately uniform in texture relative to the surrounding surfaces. I see no significant objects or textures interfering directly between them, suggesting an open space suitable for placing points.\n\nTo fulfill the requirement of identifying multiple spots within this vacant region, I will select distinct pixel coordinates that lie between the mugs, ensuring they are not centered on the mugs themselves or any visible obstructions. My approach involves choosing several points distributed across this gap, maintaining a reasonable spread to reflect "several" distinct locations.\n\nVerification ensures each selected point lies strictly within the visible vacant space between the two cups, away from the edges or any mugs\' contours. Distinctness among points is confirmed to ensure no overlap occurs.\n\nThus, based on direct visual analysis and task requirements, identified points within the vacant area between the two mugs include (376, 309), (332, 357), (384, 335), (343, 296), (348, 327), (328, 346), (371, 322), (392, 303), (380, 324), and (337, 295). These points satisfy all conditions specified by the task.',
+    'answer': '[(376, 309), (332, 357), (384, 335), (343, 296), (348, 327), (328, 346), (371, 322), (392, 303), (380, 324), (337, 295)]'}
+}
+"""
 ```
 
 
