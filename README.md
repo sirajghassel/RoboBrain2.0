@@ -86,7 +86,7 @@ model = SimpleInference("BAAI/RoboBrain2.0-7B")
 prompt = "What is shown in this image?"
 image = "http://images.cocodataset.org/val2017/000000039769.jpg"
 
-pred = model.inference(prompt, image, enable_thinking=False, do_sample=True)
+pred = model.inference(prompt, image, task="general", enable_thinking=False, do_sample=True)
 print(f"Prediction:\n{pred}")
 
 """
@@ -107,7 +107,7 @@ model = SimpleInference("BAAI/RoboBrain2.0-7B")
 prompt = "What is shown in this image?"
 image = "http://images.cocodataset.org/val2017/000000039769.jpg"
 
-pred = model.inference(prompt, image, enable_thinking=True, do_sample=True)
+pred = model.inference(prompt, image, task="general", enable_thinking=True, do_sample=True)
 print(f"Prediction:\n{pred}")
 
 """
@@ -127,11 +127,11 @@ from inference import SimpleInference
 model = SimpleInference("BAAI/RoboBrain2.0-7B")
 
 # Example:
-prompt = "You are a robot using the joint control. The task is \"hold the cup\". Please predict a possible affordance area of the end effector with bounding box [x1, y1, x2, y2]?"
+prompt = "\"hold the cup\""
 
 image = "./assets/demo/affordance.jpg"
 
-pred = model.inference(prompt, image, enable_thinking=True, do_sample=True)
+pred = model.inference(prompt, image, task="affordance", plot=True, enable_thinking=True, do_sample=True)
 print(f"Prediction:\n{pred}")
 
 ```
@@ -143,12 +143,12 @@ from inference import SimpleInference
 
 model = SimpleInference("BAAI/RoboBrain2.0-7B")
 
-# Example 1:
-prompt = "You are a robot using the joint control. The task is \"reach for the banana on the plate\". Please predict up to 10 key trajectory points to complete the task. Your answer should be formatted as a list of tuples, i.e. [[x1, y1], [x2, y2], ...], where each tuple contains the x and y coordinates of a point"
+# Example:
+prompt = "\"reach for the banana on the plate\""
 
 image = "./assets/demo/trajectory.jpg"
 
-pred = model.inference(prompt, image, enable_thinking=True, do_sample=True)
+pred = model.inference(prompt, image, task="trajectory", plot=True, enable_thinking=True, do_sample=True)
 print(f"Prediction:\n{pred}")
 
 ```
@@ -159,11 +159,12 @@ from inference import SimpleInference
 
 model = SimpleInference("BAAI/RoboBrain2.0-7B")
 
-prompt = "Identify several spots within the vacant space that's between the two mugs. Your answer should be formatted as a list of tuples, i.e. [(x1, y1), (x2, y2), ...], where each tuple contains the x and y coordinates of a point satisfying the conditions above. The coordinates should indicate the normalized pixel locations of the points in the image."
+# Example:
+prompt = "Identify several spots within the vacant space that's between the two mugs"
 
 image = "./assets/demo/pointing.jpg"
 
-pred = model.inference(prompt, image, enable_thinking=True, do_sample=True)
+pred = model.inference(prompt, image, task="pointing", plot=True, enable_thinking=True, do_sample=True)
 print(f"Prediction:\n{pred}")
 
 ```
