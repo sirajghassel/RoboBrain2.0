@@ -38,8 +38,8 @@ class SimpleInference:
         if isinstance(image, str):
             image = [image]
 
-        assert task in ["general", "pointing", "affordance", "trajectory"], f"Invalid task type: {task}. Supported tasks are 'general', 'pointing', 'affordance', 'trajectory'."
-        assert task == "general" or (task in ["pointing", "affordance", "trajectory"] and len(image) == 1), "Pointing, affordance, and trajectory tasks require exactly one image."
+        assert task in ["general", "pointing", "affordance", "trajectory", "grounding"], f"Invalid task type: {task}. Supported tasks are 'general', 'pointing', 'affordance', 'trajectory', 'grounding'."
+        assert task == "general" or (task in ["pointing", "affordance", "trajectory", "grounding"] and len(image) == 1), "Pointing, affordance, grounding, and trajectory tasks require exactly one image."
 
         if task == "pointing":
             print("Pointing task detected. We automatically add a pointing prompt for inference.")
@@ -50,6 +50,9 @@ class SimpleInference:
         elif task == "trajectory":
             print("Trajectory task detected. We automatically add a trajectory prompt for inference.")
             text = f"You are a robot using the joint control. The task is \"{text}\". Please predict up to 10 key trajectory points to complete the task. Your answer should be formatted as a list of tuples, i.e. [[x1, y1], [x2, y2], ...], where each tuple contains the x and y coordinates of a point."
+        elif task == "grounding":
+            print("Grounding task detected. We automatically add a grounding prompt for inference.")
+            text = f"Please provide the bounding box coordinate of the region this sentence describes: {text}."
 
         print(F"##### INPUT #####\n{text}\n###############")
 
@@ -106,7 +109,7 @@ class SimpleInference:
             thinking_text = ""
             answer_text = output_text[0].replace("<answer>", "").replace("</answer>", "").strip()
 
-        if plot and task in ["pointing", "affordance", "trajectory"]:
+        if plot and task in ["pointing", "affordance", "trajectory", "grounding"]:
             print("Plotting enabled. Drawing results on the image ...")
             # extract points, boxes, or trajectories based on the task
 
@@ -133,6 +136,13 @@ class SimpleInference:
                 plot_boxes =  [[int(x1), int(y1), int(x2), int(y2)] for x1, y1, x2, y2 in boxes]
                 print(f"Extracted bounding boxes: {plot_boxes}")
                 image_name_to_save = os.path.basename(image[0]).replace(".", "_with_affordance_annotated.")
+            elif task == "grounding":
+                # Extract bounding boxes
+                box_pattern = r'\[\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*\]'
+                boxes = re.findall(box_pattern, answer_text)
+                plot_boxes =  [[int(x1), int(y1), int(x2), int(y2)] for x1, y1, x2, y2 in boxes]
+                print(f"Extracted bounding boxes: {plot_boxes}")
+                image_name_to_save = os.path.basename(image[0]).replace(".", "_with_grounding_annotated.")
 
             os.makedirs("result", exist_ok=True)
             image_path_to_save = os.path.join("result", image_name_to_save)

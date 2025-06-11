@@ -77,7 +77,7 @@ pip install -r requirements.txt
 
 ## 💡 Simple Inference
 
-### 1. Predict without thinking
+### 1. Predict without thinking (General)
 ```python
 from inference import SimpleInference
 
@@ -98,7 +98,7 @@ Prediction: (as an example)
 """
 ```
 
-### 2. Predict with thinking (Beta)
+### 2. Predict with thinking (General)
 ```python
 from inference import SimpleInference
 
@@ -119,8 +119,33 @@ Prediction: (as an example)
 """
 ```
 
+### 3. Usage for Visual Grounding (VG)
+```python
+from inference import SimpleInference
 
-### 3. Usage for Affordance Prediction
+model = SimpleInference("BAAI/RoboBrain2.0-7B")
+
+prompt = "the person wearing a red hat"
+image = "./assets/demo/grounding.jpg"
+
+pred = model.inference(prompt, image, task="grounding", plot=True, enable_thinking=True, do_sample=True)
+print(f"Prediction:\n{pred}")
+
+"""
+Prediction: (as an example)
+{
+    'thinking': "From the visual input, I can identify two individuals: a man and a young boy. The man appears to be seated outside against a stone wall, wearing a blue top and jeans. His hands are around the young boy's waist. The boy is wearing a red baseball cap and a striped sweater, and he seems to be laughing or having fun while interacting with the man.\n\nNow focusing on the task at hand, which involves identifying the person wearing a red hat. In this scenario, it would be reasonable to deduce that the boy, who is wearing a red baseball cap, is the one wearing the red hat. The red cap stands out against the other elements in the scene due to its bright color, making it easy to pinpoint as the object in question.\n\nTherefore, based on direct visual analysis, the person wearing the red hat is indeed the young boy, and his position relative to the man is such that he is seated close to him along the stone wall.", 
+    'answer': '[0, 193, 226, 640]'
+}
+"""
+```
+
+<div align="center">
+<img src="./assets/demo_vg.jpg" />
+</div>
+
+
+### 4. Usage for Affordance Prediction (Embodied)
 ```python
 from inference import SimpleInference
 
@@ -148,7 +173,7 @@ Prediction: (as an example)
 </div>
 
 
-### 4. Usage for Trajectory Prediction
+### 5. Usage for Trajectory Prediction (Embodied)
 ```python
 from inference import SimpleInference
 
@@ -175,7 +200,7 @@ Prediction: (as an example)
 <img src="./assets/demo_traj.jpg" />
 </div>
 
-### 5. Usage for Pointing Prediction
+### 6. Usage for Pointing Prediction (Embodied)
 ```python
 from inference import SimpleInference
 
@@ -202,7 +227,8 @@ Prediction: (as an example)
 <img src="./assets/demo_pt.jpg" />
 </div>
 
-### 6. Extra Usage for Navigation Tasks
+
+### 7. Usage for Navigation Tasks (Embodied)
 ```python
 from inference import SimpleInference
 
