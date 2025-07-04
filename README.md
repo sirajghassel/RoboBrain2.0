@@ -334,7 +334,7 @@ If you find this project useful, welcome to cite us.
 @article{RoboBrain2.0TechnicalReport,
     title={RoboBrain 2.0 Technical Report},
     author={BAAI RoboBrain Team},
-    journal={arXiv preprint arXiv:TODO},
+    journal={arXiv preprint arXiv:2507.02029},
     year={2025}
 }
 
