@@ -279,6 +279,8 @@ Prediction: (as an example 2: sofa)
 
 ## 🤖 Training
 
+### Option 1: For Megatron User (Highly Recommended)
+
 <div align="center">
 <img src="./assets/logo_flagscale.png" width="250"/>
 </div>
@@ -286,6 +288,11 @@ Prediction: (as an example 2: sofa)
 We adopted the distributed training framework [FlagScale](https://github.com/FlagOpen/FlagScale) developed by the ***Framework R&D team of BAAI*** for training. The training can be launched in the following steps:
 
 You can reference the [QuickStart.md](https://github.com/FlagOpen/FlagScale/blob/dc6e8248eafe6f03e66e2735400378e5db1f67dd/flagscale/train/models/qwen2_5_vl/QuickStart.md) to train the base instruct model or finetune the RoboBrain2.0.
+
+### Option 2: For DeepSpeed User
+
+RoboBrain2.0 is also compatible with the official training code for Qwen2.5VL. For details, please refer to [qwen-vl-finetune](https://github.com/QwenLM/Qwen2.5-VL/tree/main/qwen-vl-finetune).
+
 
 ## 🔍 Evaluation
 
