@@ -36,6 +36,7 @@ In particular, it supports key real-world embodied intelligence capabilities, in
 </div>
 
 ## 🗞️ News
+- **`2025-07-23`**: 🤗 [RoboBrain 2.0-3B](https://huggingface.co/BAAI/RoboBrain2.0-3B) model checkpoint has been also released in Huggingface.
 - **`2025-07-03`**: 🤗 [RoboBrain 2.0-32B](https://huggingface.co/BAAI/RoboBrain2.0-32B) model checkpoint has been released in Huggingface.
 - **`2025-06-11`**: 💡 We optimized the inference pipeline for **multi-task applications** in RoboBrain 2.0. Please refer to [Simple Inference](https://github.com/FlagOpen/RoboBrain2.0/tree/main?tab=readme-ov-file#-simple-inference) for quick usage (general & embodied).
 - **`2025-06-07`**: 🎉 We highlight the training framework ([FlagScale](https://github.com/FlagOpen/FlagScale)) developed by *BAAI Framework R&D team*, and the evaluation framework ([FlagEvalMM](https://github.com/flageval-baai/FlagEvalMM)) by *BAAI FlagEval team*. Both are used for RoboBrain 2.0. 
@@ -46,10 +47,11 @@ In particular, it supports key real-world embodied intelligence capabilities, in
 
 
 ## 📆 Todo
+- [x] Release model checkpoint for RoboBrain 2.0-3B
 - [x] Release model checkpoint for RoboBrain 2.0-7B
+- [x] Release model checkpoint for RoboBrain 2.0-32B
 - [x] Release quick inference example for RoboBrain 2.0
 - [x] Release training and evaluation codes for RoboBrain 2.0
-- [x] Release model checkpoint for RoboBrain 2.0-32B
 
 ## 🚀 Features
 **RoboBrain 2.0** supports ***interactive reasoning*** with long-horizon planning and closed-loop feedback, ***spatial perception*** for precise point and bbox prediction from complex instructions, ***temporal perception*** for future trajectory estimation, and ***scene reasoning*** through real-time structured memory construction and update.
@@ -72,6 +74,7 @@ In particular, it supports key real-world embodied intelligence capabilities, in
 
 | Models               | Checkpoint                                                     | Description                                                | 
 |----------------------|----------------------------------------------------------------|------------------------------------------------------------|
+| RoboBrain 2.0 3B     | [🤗 BAAI/RoboBrain2.0-3B](https://huggingface.co/BAAI/RoboBrain2.0-3B)   | 3B parameter version of the RoboBrain2.0                 | 
 | RoboBrain 2.0 7B     | [🤗 BAAI/RoboBrain2.0-7B](https://huggingface.co/BAAI/RoboBrain2.0-7B)   | 7B parameter version of the RoboBrain2.0                 | 
 | RoboBrain 2.0 32B    | [🤗 BAAI/RoboBrain2.0-32B](https://huggingface.co/BAAI/RoboBrain2.0-32B) | 32B parameter version of the RoboBrain2.0                |
 
