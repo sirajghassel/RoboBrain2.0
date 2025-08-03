@@ -269,20 +269,18 @@ if __name__ == "__main__":
     # image = "http://images.cocodataset.org/val2017/000000039769.jpg"
     # pred_3b = model_3b.inference(prompt, image, task="general", plot=True)
     # print(f"3B Prediction:\n{pred_3b}")
-    
-    # print("\n" + "="*50 + "\n")
-    
+        
     # Example 2: Using 7B model (with thinking)
+
     print("=== Testing 7B Model ===")
     model_7b = UnifiedInference("BAAI/RoboBrain2.0-7B")
-
     prompt = "What is shown in this image?"
     image = "http://images.cocodataset.org/val2017/000000039769.jpg"
-
     pred_7b = model_7b.inference(prompt, image, task="general", enable_thinking=True)
     print(f"7B Prediction:\n{pred_7b}")
     
     # Example 3: Force disable thinking for 7B model
+
     # print("\n=== Testing 7B Model (thinking disabled) ===")
     # pred_7b_no_thinking = model_7b.inference(prompt, image, task="general", enable_thinking=False)
     # print(f"7B Prediction (no thinking):\n{pred_7b_no_thinking}")
