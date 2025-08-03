@@ -97,9 +97,9 @@ pip install -r requirements.txt
 
 ### 1. Predict without thinking (General)
 ```python
-from inference import SimpleInference
+from inference import UnifiedInference
 
-model = SimpleInference("BAAI/RoboBrain2.0-7B")
+model = UnifiedInference("BAAI/RoboBrain2.0-7B")
 
 prompt = "What is shown in this image?"
 image = "http://images.cocodataset.org/val2017/000000039769.jpg"
@@ -118,9 +118,9 @@ Prediction: (as an example)
 
 ### 2. Predict with thinking (General)
 ```python
-from inference import SimpleInference
+from inference import UnifiedInference
 
-model = SimpleInference("BAAI/RoboBrain2.0-7B")
+model = UnifiedInference("BAAI/RoboBrain2.0-7B")
 
 prompt = "What is shown in this image?"
 image = "http://images.cocodataset.org/val2017/000000039769.jpg"
@@ -139,9 +139,9 @@ Prediction: (as an example)
 
 ### 3. Usage for Visual Grounding (VG)
 ```python
-from inference import SimpleInference
+from inference import UnifiedInference
 
-model = SimpleInference("BAAI/RoboBrain2.0-7B")
+model = UnifiedInference("BAAI/RoboBrain2.0-7B")
 
 prompt = "the person wearing a red hat"
 image = "./assets/demo/grounding.jpg"
@@ -165,9 +165,9 @@ Prediction: (as an example)
 
 ### 4. Usage for Affordance Prediction (Embodied)
 ```python
-from inference import SimpleInference
+from inference import UnifiedInference
 
-model = SimpleInference("BAAI/RoboBrain2.0-7B")
+model = UnifiedInference("BAAI/RoboBrain2.0-7B")
 
 # Example:
 prompt = "hold the cup"
@@ -193,9 +193,9 @@ Prediction: (as an example)
 
 ### 5. Usage for Trajectory Prediction (Embodied)
 ```python
-from inference import SimpleInference
+from inference import UnifiedInference
 
-model = SimpleInference("BAAI/RoboBrain2.0-7B")
+model = UnifiedInference("BAAI/RoboBrain2.0-7B")
 
 # Example:
 prompt = "reach for the banana on the plate"
@@ -220,9 +220,9 @@ Prediction: (as an example)
 
 ### 6. Usage for Pointing Prediction (Embodied)
 ```python
-from inference import SimpleInference
+from inference import UnifiedInference
 
-model = SimpleInference("BAAI/RoboBrain2.0-7B")
+model = UnifiedInference("BAAI/RoboBrain2.0-7B")
 
 # Example:
 prompt = "Identify several spots within the vacant space that's between the two mugs"
@@ -248,9 +248,9 @@ Prediction: (as an example)
 
 ### 7. Usage for Navigation Tasks (Embodied)
 ```python
-from inference import SimpleInference
+from inference import UnifiedInference
 
-model = SimpleInference("BAAI/RoboBrain2.0-7B")
+model = UnifiedInference("BAAI/RoboBrain2.0-7B")
 
 # Example 1:
 prompt_1 = "Identify several spots within toilet in the house"
@@ -394,3 +394,4 @@ If you find this project useful, welcome to cite us.
     year={2024}
 }
 ```
+
