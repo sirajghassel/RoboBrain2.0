@@ -39,7 +39,7 @@ In particular, it supports key real-world embodied intelligence capabilities, in
 </div>
 
 ## 🗞️ News
-- **`2025-09-18`**: 🔥 [**Reason-RFT**](https://arxiv.org/abs/2503.20752)(Core Post-Training Strategy for RoboBrain2.0) gets accepted to **NeurIPS 2025**.
+- **`2025-09-18`**: 🔥 [**Reason-RFT**](https://arxiv.org/abs/2503.20752) (Core Post-Training Strategy for RoboBrain2.0) gets accepted to **NeurIPS 2025**.
 - **`2025-07-23`**: 🤗 [RoboBrain 2.0-3B](https://huggingface.co/BAAI/RoboBrain2.0-3B) model checkpoint has been also released in Huggingface.
 - **`2025-07-03`**: 🤗 [RoboBrain 2.0-32B](https://huggingface.co/BAAI/RoboBrain2.0-32B) model checkpoint has been released in Huggingface.
 - **`2025-06-11`**: 💡 We optimized the inference pipeline for **multi-task applications** in RoboBrain 2.0. Please refer to [Simple Inference](https://github.com/FlagOpen/RoboBrain2.0/tree/main?tab=readme-ov-file#-simple-inference) for quick usage (general & embodied).
@@ -398,5 +398,6 @@ If you find this project useful, welcome to cite us.
     year={2024}
 }
 ```
+
 
 
