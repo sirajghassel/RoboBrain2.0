@@ -18,6 +18,9 @@
         </a>&nbsp&nbsp🎯 <a href="https://flagopen.github.io/RoboOS/">RoboOS</a>: An Efficient Open-Source Multi-Robot Coordination System for RoboBrain.
 </p>
 <p align="center">
+</a>&nbsp&nbsp⭐️ <a href="https://github.com/tanhuajie/Reason-RFT">Reason-RFT</a>: Core Post-Training Strategy for Embodied Visual Reasoning in RoboBrain2.0.
+</p>
+<p align="center">
 </a>&nbsp&nbsp🌍 <a href="https://github.com/FlagOpen/RoboBrain">RoboBrain 1.0</a>: A Unified Brain Model for Robotic Manipulation from Abstract to Concrete.
 </p>
 
@@ -36,6 +39,7 @@ In particular, it supports key real-world embodied intelligence capabilities, in
 </div>
 
 ## 🗞️ News
+- **`2025-09-18`**: 🔥 [**Reason-RFT**](https://arxiv.org/abs/2503.20752)(Core Post-Training Strategy for RoboBrain2.0) gets accepted to **NeurIPS 2025**.
 - **`2025-07-23`**: 🤗 [RoboBrain 2.0-3B](https://huggingface.co/BAAI/RoboBrain2.0-3B) model checkpoint has been also released in Huggingface.
 - **`2025-07-03`**: 🤗 [RoboBrain 2.0-32B](https://huggingface.co/BAAI/RoboBrain2.0-32B) model checkpoint has been released in Huggingface.
 - **`2025-06-11`**: 💡 We optimized the inference pipeline for **multi-task applications** in RoboBrain 2.0. Please refer to [Simple Inference](https://github.com/FlagOpen/RoboBrain2.0/tree/main?tab=readme-ov-file#-simple-inference) for quick usage (general & embodied).
@@ -43,7 +47,7 @@ In particular, it supports key real-world embodied intelligence capabilities, in
 - **`2025-06-06`**: 🤗 [RoboBrain 2.0-7B](https://huggingface.co/BAAI/RoboBrain2.0-7B) model checkpoint has been released in Huggingface.
 - **`2025-06-06`**: 🔥 We're excited to announce the release of our more powerful [RoboBrain 2.0](https://superrobobrain.github.io/).
 - **`2025-04-11`**: 🎉 [RoboBrain 1.0](https://github.com/FlagOpen/RoboBrain/) was selected for CVPR 2025's official [Embodied AI Trends Commentary](https://cvpr.thecvf.com/Conferences/2025/News/AI_Enhanced_Robotics).
-- **`2025-02-27`**: 🌍 [RoboBrain 1.0](http://arxiv.org/abs/2502.21257/) was accepted to CVPR2025.
+- **`2025-02-27`**: 🔥 [**RoboBrain 1.0**](http://arxiv.org/abs/2502.21257/) was accepted to **CVPR 2025**.
 
 
 ## 📆 Todo
@@ -394,4 +398,5 @@ If you find this project useful, welcome to cite us.
     year={2024}
 }
 ```
+
 
