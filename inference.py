@@ -2,6 +2,7 @@ import os, re, cv2
 from typing import Union
 from transformers import Qwen2_5_VLForConditionalGeneration, AutoProcessor
 from qwen_vl_utils import process_vision_info
+import torch
 
 class UnifiedInference:
     """
@@ -117,7 +118,9 @@ class UnifiedInference:
             padding=True,
             return_tensors="pt",
         )
-        inputs = inputs.to("cuda")
+        device = "mps" if torch.backends.mps.is_available() else "cpu"
+        inputs = inputs.to(device)
+        # self.model.to(device)
 
         # Inference
         print("Running inference ...")
